@@ -87,7 +87,6 @@ void option1(void) {
             need[i][j] = maxClaim[i][j];
         }
     }
-        
     // Then, collect all the allocation data and adjust the available and need matrices
     for(int i = 0; i < numProcesses; i++) {
         printf("Enter number of units of each resource (r0 to r%d) currently allocated to process p%d: ", numResources - 1, i);
@@ -97,7 +96,6 @@ void option1(void) {
             available[j] -= allocated[i][j];
         }
     }
-
     // Print resource vector, available vector, maxclaim array, allocated array, need array
     printVector(resource, numResources, "Resources");
     printVector(available, numResources, "Available");
@@ -111,7 +109,6 @@ void option1(void) {
 void option2(void) {
     // Declare local variables
     int process, resourceIndex, units;
-    
     // Prompt for process, resource, and number of units requested
     printf("Enter requesting process: p");
     scanf("%d", &process);
@@ -119,7 +116,6 @@ void option2(void) {
     scanf("%d", &resourceIndex);
     printf("Enter number of units process p%d is requesting from resource r%d: ", process, resourceIndex);
     scanf("%d", &units);
-
     // If enough units available and request is less than need
     if(units <= available[resourceIndex] && units <= need[process][resourceIndex]) {
         // Reduce number of available units
@@ -134,7 +130,6 @@ void option2(void) {
         // Print message that request was denied
         printf("\nRequest denied.\n");
     }
-
     printVector(available, numResources, "Available after request");
     printMatrix(allocated, numProcesses, numResources, "Allocated after request");
     printMatrix(need, numProcesses, numResources, "Need after request");
@@ -145,7 +140,6 @@ void option2(void) {
 void option3(void) {
     // Declare local variables
     int process, resourceIndex, units;
-    
     // Prompt for process, resource, and number of units requested
     printf("Enter releasing processor: p");
     scanf("%d", &process);
@@ -153,7 +147,6 @@ void option3(void) {
     scanf("%d", &resourceIndex);
     printf("Enter number of units process p%d is releasing from resource r%d: ", process, resourceIndex);
     scanf("%d", &units);
-
     // If enough units allocated
     if(units <= allocated[process][resourceIndex]) {
         // Increase number of available units
@@ -168,7 +161,6 @@ void option3(void) {
         // Print message that release cannot be performed
         printf("\nRelease cannot be performed.\n");
     }
-
     printVector(available, numResources, "Available after release");
     printMatrix(allocated, numProcesses, numResources, "Allocated after release");
     printMatrix(need, numProcesses, numResources, "Need after release");
@@ -181,12 +173,10 @@ void option4(void) {
     int safeSequence[numProcesses];
     int finished[numProcesses]; // Tracks which processes have finished
     int work[numResources]; // Temporary array to hold available resources during algorithm execution
-  
     for (int i = 0; i < numProcesses; i++)
         finished[i] = 0; // Initialize all processes as not finished
     for (int i = 0; i < numResources; i++)
         work[i] = available[i]; // Initialize work as a copy of available resources
-
     int numFinished = 0; // Count of finished (safe-sequence included) processes
     // While not all processes are processed
     while (numFinished < numProcesses) {
@@ -262,7 +252,6 @@ void option5(void) {
 int main(void) {
     // Declare local vars
     int choice;
-    
     // While user has not chosen to quit
     do {
         // Print menu of options
