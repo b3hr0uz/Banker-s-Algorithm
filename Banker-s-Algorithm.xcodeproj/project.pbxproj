@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		BE8629372BCF87AD00D59EB9 /* Banker-s-Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Banker-s-Algorithm"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE86293A2BCF87AD00D59EB9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		BEBD01252BD0869E0087F47E /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				BE86293A2BCF87AD00D59EB9 /* main.c */,
+				BEBD01252BD0869E0087F47E /* .gitignore */,
 				BE8629382BCF87AD00D59EB9 /* Products */,
 			);
 			sourceTree = "<group>";
