@@ -35,6 +35,7 @@ void printVector(int *vector, int size, char *title) {
 // Print a matrix with a title
 void printMatrix(int **matrix, int numRows, int numCols, char *title) {
     // Declare local variables
+    
     printf("%s:\n   ", title);
     // For loop j: print each resource index
     for(int j = 0; j < numCols; j++)
