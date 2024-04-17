@@ -17,7 +17,6 @@ int numResources, numProcesses;
 
 //*********************************************************
 // Print a vector with a title
-
 void printVector(int *vector, int size, char *title) {
     // Declare local variables
     printf("%s:\n", title);
