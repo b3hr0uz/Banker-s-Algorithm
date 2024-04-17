@@ -17,9 +17,9 @@ int numResources, numProcesses;
 
 //*********************************************************
 // Print a vector with a title
+
 void printVector(int *vector, int size, char *title) {
     // Declare local variables
-    
     printf("%s:\n", title);
     // For loop j: print each resource index
     for(int j = 0; j < size; j++)
@@ -57,6 +57,7 @@ void printMatrix(int **matrix, int numRows, int numCols, char *title) {
 // Option 1: Enter resource claim graph data
 void option1(void) {
     // Declare local variables
+    
     printf("Enter number of resources: ");
     scanf("%d", &numResources);
     resource = (int *)malloc(numResources * sizeof(int));
@@ -111,6 +112,7 @@ void option1(void) {
 void option2(void) {
     // Declare local variables
     int process, resourceIndex, units;
+    
     // Prompt for process, resource, and number of units requested
     printf("Enter requesting process: p");
     scanf("%d", &process);
@@ -180,6 +182,7 @@ void option4(void) {
     int safeSequence[numProcesses];
     int finished[numProcesses]; // Tracks which processes have finished
     int work[numResources]; // Temporary array to hold available resources during algorithm execution
+  
     for (int i = 0; i < numProcesses; i++)
         finished[i] = 0; // Initialize all processes as not finished
     for (int i = 0; i < numResources; i++)
@@ -260,6 +263,7 @@ void option5(void) {
 int main(void) {
     // Declare local vars
     int choice;
+    
     // While user has not chosen to quit
     do {
         // Print menu of options
@@ -286,6 +290,6 @@ int main(void) {
             default:
                 printf("Invalid selection. Please try again.\n");
         }
-    } while(choice != 5); // while loop end
+    } while(choice != 5); // While loop end
     return 0; // Indicates success
 } // End of procedure
