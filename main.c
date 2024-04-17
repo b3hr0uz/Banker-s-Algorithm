@@ -56,18 +56,15 @@ void printMatrix(int **matrix, int numRows, int numCols, char *title) {
 // Option 1: Enter resource claim graph data
 void option1(void) {
     // Declare local variables
-    
     printf("Enter number of resources: ");
     scanf("%d", &numResources);
     resource = (int *)malloc(numResources * sizeof(int));
     available = (int *)malloc(numResources * sizeof(int));
-
     printf("Enter number of units for resources (r0 to r%d): ", numResources - 1);
     for(int i = 0; i < numResources; i++) {
         scanf("%d", &resource[i]);
         available[i] = resource[i]; // Initially, all resources are available
     }
-
     printf("Enter number of processes: ");
     scanf("%d", &numProcesses);
     maxClaim = (int **)malloc(numProcesses * sizeof(int *));
@@ -243,7 +240,6 @@ void option5(void) {
     if (maxClaim != NULL) free(maxClaim);
     if (allocated != NULL) free(allocated);
     if (need != NULL) free(need);
-
     printf("Memory has been freed. Exiting program.\n");
 }
 
