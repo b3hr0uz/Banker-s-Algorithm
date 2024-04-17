@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define MENU_OF_OPTIONS "Banker's Algorithm\n------------------\n1) Enter resource claim graph data\n2) Request resource by a process\n3) Release resource from a process\n4) Determine safe sequence of processes\n5) Quit program\n\nEnter selection: "
+
 // Declare dynamic arrays/vectors and global variables
 int *resource, *available;
 int **maxClaim, **allocated, **need;
@@ -260,7 +262,7 @@ int main(void) {
     // While user has not chosen to quit
     do {
         // Print menu of options
-        printf("Banker's Algorithm\n------------------\n1) Enter resource claim graph data\n2) Request resource by a process\n3) Release resource from a process\n4) Determine safe sequence of processes\n5) Quit program\n\nEnter selection: ");
+        printf(MENU_OF_OPTIONS);
         // Prompt for menu selection
         scanf("%d", &choice);
         // Call appropriate procedure based on choice--use switch statement or series of if, else if, else statements
