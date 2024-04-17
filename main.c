@@ -56,6 +56,7 @@ void printMatrix(int **matrix, int numRows, int numCols, char *title) {
 // Option 1: Enter resource claim graph data
 void option1(void) {
     // Declare local variables
+    
     printf("Enter number of resources: ");
     scanf("%d", &numResources);
     resource = (int *)malloc(numResources * sizeof(int));
